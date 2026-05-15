@@ -1,0 +1,112 @@
+/* ============================================================
+   Image-Based Service Cards
+   ============================================================ */
+.single-service-area {
+    position: relative;
+    height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: none !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left !important;
+    padding: 40px 30px !important;
+    color: white !important;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.single-service-area::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    z-index: 1;
+    transition: opacity 0.6s ease;
+}
+
+.single-service-area::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--color-primary) 0%, rgba(10, 74, 142, 0.8) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.single-service-area .content-overlay {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+.single-service-area:hover {
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.single-service-area:hover::after {
+    opacity: 0.95;
+}
+
+.single-service-area:hover::before {
+    opacity: 0;
+}
+
+.single-service-area:hover .content-overlay {
+    /* No transform */
+}
+
+.single-service-area .title {
+    color: white !important;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px !important;
+    line-height: 1.2;
+}
+
+.single-service-area .disc {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px !important;
+    opacity: 0.85;
+}
+
+.single-service-area .btn-transparent {
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.single-service-area .btn-transparent:hover {
+    background: white !important;
+    color: var(--color-primary) !important;
+    border-color: white;
+}
+
+.single-service-area .btn-transparent i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.single-service-area .btn-transparent:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .single-service-area {
+        height: 380px;
+    }
+}

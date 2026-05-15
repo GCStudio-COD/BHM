@@ -141,14 +141,15 @@
           spaceBetween: 30,
           slidesPerView: 3,
           loop: true,
-          speed: 1000,
-          // autoplay: {
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // },
+          speed: 1200,
+          parallax: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
           navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".testimonial-next",
+            prevEl: ".testimonial-prev",
           },
           pagination: {
             el: ".swiper-pagination",
@@ -547,6 +548,33 @@
           pagination: {
             el: ".swiper-pagination",
             clickable: true
+          },
+        });
+      });
+      $(document).ready(function () {
+        var swiper = new Swiper(".mySwiper-nearby", {
+          spaceBetween: 30,
+          slidesPerView: 3,
+          loop: true,
+          speed: 1000,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            1200: {
+              slidesPerView: 3,
+            },
+            992: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            }
           },
         });
       });
