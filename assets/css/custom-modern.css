@@ -216,147 +216,161 @@ body.no-scroll {
         "cardio cardio ortho ortho"
         "cardio cardio gen ped"
         "neuro gastro obstet obstet"
-        "neuro neph pulm uro";
+        "neuro neph env infect"
+        "pulm pulm uro uro";
 }
 
 .bento-item {
     position: relative;
     border-radius: 32px;
     overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
+    background: white;
+    border: 1px solid #eef2f8;
 }
 
 .bento-item:hover {
-    transform: scale(1.02);
+    transform: translateY(-8px);
     z-index: 2;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 20px 40px rgba(10, 74, 142, 0.12);
 }
 
-/* Feature Card Styling */
-.bento-item.feature-card {
-    grid-area: cardio;
+.bento-item .content {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.bento-item .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    background: #f0f7ff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.bento-item:hover .icon-wrapper {
     background: var(--color-primary);
     color: white;
 }
 
+.bento-item .content i, 
+.single-service-area i,
+.rts-btn i,
+.footer i {
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", sans-serif !important;
+    font-weight: 900;
+}
+
+/* Feature Card Styling (Cardiology) */
+.bento-item.feature-card {
+    grid-area: cardio;
+    background: var(--color-primary);
+    border: none;
+}
+
 .bento-item.feature-card .content {
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: flex-end;
     padding: 40px;
+}
+
+.bento-item.feature-card .icon-wrapper {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     color: white;
+    width: 72px;
+    height: 72px;
 }
 
 .bento-item.feature-card h3 {
-    color: white;
-    font-size: 36px;
+    color: white !important;
+    font-size: 34px;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
 .bento-item.feature-card p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 16px;
     line-height: 1.6;
 }
 
-/* Wide Card Variations */
+/* Wide Card Styling */
 .bento-item.wide-card {
-    background: #f0f7ff;
-}
-
-.bento-item.wide-card.pink {
-    background: #fff0f7;
-}
-
-.bento-item.wide-card.red {
-    background: #fff8f8;
-    border: 1px solid #ffecec;
+    background: #f8faff;
 }
 
 .bento-item.wide-card .content {
-    padding: 30px;
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-.bento-item.wide-card .icon {
-    min-width: 60px;
-    height: 60px;
-    background: white;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    color: var(--color-primary);
-}
-
-.bento-item.wide-card.pink .icon {
-    color: #d63384;
-}
-
-.bento-item.wide-card.red .icon {
-    color: #ff5e5e;
-}
-
-/* Tall Card Styling */
-.bento-item.tall-card {
-    grid-area: neuro;
-    background: var(--color-primary);
-    color: white;
-}
-
-.bento-item.tall-card .content {
-    padding: 40px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.bento-item.tall-card h4 {
-    color: white;
-    margin-bottom: 15px;
-}
-
-/* Standard/Small Card Styling */
-.bento-item.standard-card {
-    background: white;
-    border: 1px solid #eee;
-}
-
-.bento-item.standard-card .content {
-    padding: 30px;
-}
-
-.bento-item.standard-card i {
-    font-size: 24px;
-    color: var(--color-primary);
-    margin-bottom: 15px;
-    display: block;
-}
-
-/* Bento Typography */
-.bento-item h3,
-.bento-item h4,
-.bento-item h5,
-.bento-item h6 {
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.bento-item p {
-    font-size: 14px;
-    line-height: 1.4;
+.bento-item.wide-card .icon-wrapper {
     margin-bottom: 0;
 }
 
-/* Bento Responsive Breakpoints */
+/* Tall Card Styling (Neurology) */
+.bento-item.tall-card {
+    grid-area: neuro;
+    background: #1a202c;
+    border: none;
+}
+
+.bento-item.tall-card .content {
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.bento-item.tall-card .icon-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 60px;
+    height: 60px;
+}
+
+.bento-item.tall-card h4 {
+    color: white !important;
+    font-size: 28px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.bento-item.tall-card p {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 15px;
+}
+
+/* Standard Card Styling */
+.bento-item.standard-card {
+    background: white;
+}
+
+/* Bento Typography */
+.bento-item h3, .bento-item h4, .bento-item h5 {
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.bento-item p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-body);
+}
+
 @media (max-width: 1200px) {
     .bento-grid-container {
         grid-template-columns: repeat(3, 1fr);
@@ -364,23 +378,50 @@ body.no-scroll {
             "cardio cardio ortho"
             "cardio cardio gen"
             "neuro ped gastro"
-            "neuro neph pulm"
-            "obstet obstet uro";
+            "neuro neph env"
+            "obstet obstet infect"
+            "pulm pulm uro";
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .bento-grid-container {
-        display: flex;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: none !important;
+        gap: 20px;
+    }
+    
+    .bento-item {
+        grid-area: auto !important;
+    }
+
+    .bento-item.wide-card, .bento-item.feature-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .bento-grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .bento-item, .bento-item.wide-card, .bento-item.feature-card {
+        grid-column: span 1;
+    }
+
+    .bento-item.feature-card .content,
+    .bento-item.tall-card .content {
+        padding: 30px;
+    }
+
+    .bento-item.wide-card .content {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
     }
 
-    .bento-item.feature-card {
-        height: 400px;
-    }
-
-    .bento-item.tall-card {
-        height: 300px;
+    .bento-item.wide-card .icon-wrapper {
+        margin-bottom: 20px;
     }
 }
 
@@ -1099,9 +1140,65 @@ body.no-scroll {
     color: var(--color-primary);
 }
 
-@media (max-width: 991px) {
-    .footer-modern-dark {
-        padding-top: 70px;
-        padding-bottom: 50px;
+/* Nearby Facilities Styles */
+.nearby-facilities-area {
+    background: #f8faff;
+}
+
+.facility-card-modern {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.facility-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 74, 142, 0.08);
+    border-color: var(--color-primary);
+}
+
+.facility-card-modern .icon-box {
+    min-width: 65px;
+    height: 65px;
+    background: #f0f7ff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.facility-card-modern:hover .icon-box {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.facility-card-modern .content h5 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1c1c1c;
+}
+
+.facility-card-modern .content p {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .facility-card-modern {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
     }
 }

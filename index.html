@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnifying-popup.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/custom-modern.css">
     <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -177,8 +178,6 @@
                 </div>
                 <!-- single swiper -->
             </div>
-            <div class="swiper-button-next"><i class="fa-regular fa-chevron-right"></i></div>
-            <div class="swiper-button-prev"><i class="fa-regular fa-chevron-left"></i></div>
         </div>
     </div>
     <!-- banner area end -->
@@ -434,23 +433,23 @@
                 <!-- Cardiology (Feature) -->
                 <div class="bento-item feature-card">
                     <div class="content">
-                        <i class="fa-solid fa-heart-pulse mb--20"
-                            style="font-size: 50px; color: rgba(255,255,255,0.4);"></i>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
                         <h3>Cardiology</h3>
-                        <p>Comprehensive cardiac care including preventive cardiology, advanced diagnosis, and treatment
-                            procedures supported by top-tier specialists.</p>
+                        <p>Comprehensive cardiac care including preventive cardiology, diagnosis, and advanced treatment procedures.</p>
                     </div>
                 </div>
 
                 <!-- Orthopaedics (Wide) -->
                 <div class="bento-item wide-card" style="grid-area: ortho;">
                     <div class="content">
-                        <div class="icon">
+                        <div class="icon-wrapper">
                             <i class="fa-solid fa-bone"></i>
                         </div>
                         <div>
                             <h5>Orthopaedics</h5>
-                            <p>Advanced care for bone, joint, spine, and trauma.</p>
+                            <p>Advanced orthopaedic care for bone, joint, spine, trauma, and sports injury management.</p>
                         </div>
                     </div>
                 </div>
@@ -458,7 +457,9 @@
                 <!-- Neurology (Tall) -->
                 <div class="bento-item tall-card">
                     <div class="content">
-                        <i class="fa-solid fa-brain" style="font-size: 36px; color: rgba(255,255,255,0.3);"></i>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
                         <div>
                             <h4>Neurology</h4>
                             <p>Specialized care for disorders affecting the brain, spine, and nervous system.</p>
@@ -469,43 +470,45 @@
                 <!-- General Medicine -->
                 <div class="bento-item standard-card" style="grid-area: gen;">
                     <div class="content">
-                        <i class="fa-solid fa-stethoscope"></i>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
                         <h5>General Medicine</h5>
-                        <p>Evaluation for acute and chronic conditions.</p>
+                        <p>Comprehensive medical evaluation for acute and chronic conditions.</p>
                     </div>
                 </div>
 
                 <!-- Paediatrics -->
                 <div class="bento-item standard-card" style="grid-area: ped;">
                     <div class="content">
-                        <i class="fa-solid fa-baby"></i>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
                         <h5>Paediatrics</h5>
-                        <p>Dedicated care for infants and children.</p>
+                        <p>Compassionate healthcare services dedicated to infants and children.</p>
                     </div>
                 </div>
 
-                <!-- Gastro -->
-                <div class="bento-item wide-card red" style="grid-area: gastro;">
+                <!-- Gastroenterology -->
+                <div class="bento-item standard-card" style="grid-area: gastro;">
                     <div class="content">
-                        <div class="icon">
+                        <div class="icon-wrapper">
                             <i class="fa-solid fa-hospital-user"></i>
                         </div>
-                        <div>
-                            <h5>Gastroenterology</h5>
-                            <p>Digestive care and treatments.</p>
-                        </div>
+                        <h5>Gastroenterology</h5>
+                        <p>Advanced digestive care and treatment for gastrointestinal disorders.</p>
                     </div>
                 </div>
 
                 <!-- Obstetrics & Gynaecology (Wide) -->
-                <div class="bento-item wide-card pink" style="grid-area: obstet;">
+                <div class="bento-item wide-card" style="grid-area: obstet;">
                     <div class="content">
-                        <div class="icon">
+                        <div class="icon-wrapper">
                             <i class="fa-solid fa-venus"></i>
                         </div>
                         <div>
                             <h5>Obstetrics & Gynaecology</h5>
-                            <p>Maternity and gynecological care for women.</p>
+                            <p>Comprehensive women’s healthcare with advanced maternity and gynecological care.</p>
                         </div>
                     </div>
                 </div>
@@ -513,27 +516,59 @@
                 <!-- Nephrology -->
                 <div class="bento-item standard-card" style="grid-area: neph;">
                     <div class="content">
-                        <i class="fa-solid fa-house-medical"></i>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-house-medical"></i>
+                        </div>
                         <h5>Nephrology</h5>
-                        <p>Specialized kidney and renal care.</p>
+                        <p>Specialized kidney care including dialysis and renal services.</p>
                     </div>
                 </div>
 
-                <!-- Pulmonology -->
-                <div class="bento-item standard-card" style="grid-area: pulm;">
+                <!-- Environmental Responsibility -->
+                <div class="bento-item standard-card" style="grid-area: env;">
                     <div class="content">
-                        <i class="fa-solid fa-lungs"></i>
-                        <h5>Pulmonology</h5>
-                        <p>Expert care for respiratory health.</p>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h5>Environmental Responsibility</h5>
+                        <p>Committed to sustainable practices and eco-friendly healthcare delivery.</p>
                     </div>
                 </div>
 
-                <!-- Urology -->
-                <div class="bento-item standard-card" style="grid-area: uro;">
+                <!-- Infection Control Systems -->
+                <div class="bento-item standard-card" style="grid-area: infect;">
                     <div class="content">
-                        <i class="fa-solid fa-user-doctor"></i>
-                        <h5>Urology</h5>
-                        <p>Urinary and reproductive health.</p>
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </div>
+                        <h5>Infection Control Systems</h5>
+                        <p>Advanced protocols to ensure the highest standards of hygiene and safety.</p>
+                    </div>
+                </div>
+
+                <!-- Pulmonology (Wide) -->
+                <div class="bento-item wide-card" style="grid-area: pulm;">
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-lungs"></i>
+                        </div>
+                        <div>
+                            <h5>Pulmonology</h5>
+                            <p>Expert respiratory care for lung and breathing-related conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urology (Wide) -->
+                <div class="bento-item wide-card" style="grid-area: uro;">
+                    <div class="content">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h5>Urology</h5>
+                            <p>Advanced diagnosis and treatment for urinary and reproductive health.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -867,7 +902,7 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                     <div class="sustainability-card">
                         <div class="icon-wrapper clinical">
-                            <i class="fa-solid fa-sparkles"></i>
+                            <i class="fa-solid fa-hand-sparkles"></i>
                         </div>
                         <h4>Clean & Safe Healthcare</h4>
                         <p>Maintenance of the highest standards of hygiene and patient safety.</p>
@@ -1264,6 +1299,98 @@
     </div>
     <!-- how to reach section end -->
 
+    <!-- nearby facilities section start -->
+    <div class="nearby-facilities-area rts-section-gap bg-light" id="nearby">
+        <div class="container">
+            <div class="row mb--50">
+                <div class="col-lg-12 text-center">
+                    <span class="pre wow fadeInUp" style="color: var(--color-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Local Context</span>
+                    <h2 class="title wow fadeInUp" data-wow-delay=".2s" style="font-size: 44px; margin-top: 10px;">Nearby Facilities & Attractions</h2>
+                    <p class="disc wow fadeInUp mx-auto" data-wow-delay=".4s" style="max-width: 800px; font-size: 18px; color: #555; margin-top: 20px;">
+                        Conveniently located in Perumbavoor, the hospital offers easy access to transportation hubs, 
+                        accommodation facilities, pharmacies, restaurants, and essential support services for patients and bystanders.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Hotels -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="facility-card-modern">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Hotels & Stay Options</h5>
+                            <p>Premium and budget accommodation options available within 1-2 km radius for patient families.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurants -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="facility-card-modern">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Restaurants & Cafes</h5>
+                            <p>Diverse dining options ranging from local Kerala cuisine to multi-cuisine restaurants nearby.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pharmacies -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="facility-card-modern">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Pharmacies</h5>
+                            <p>Multiple 24/7 pharmacies and medical stores located within walking distance from the hospital.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bus Stand -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="facility-card-modern">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Bus Stand Access</h5>
+                            <p>Perumbavoor KSRTC and Private Bus Stands are within 5 minutes reach for easy commuting.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Railway -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="facility-card-modern">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-train"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Railway Connectivity</h5>
+                            <p>Aluva Railway Station (AWY) is the nearest major rail hub, located approximately 15 km away.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Airport -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="facility-card-modern">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-plane"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Airport Connectivity</h5>
+                            <p>Cochin International Airport (COK) is conveniently located just 12 km from the hospital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nearby facilities section end -->
+
+
 
 
 
@@ -1522,10 +1649,6 @@
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: ".rts-banner-area-two .swiper-button-next",
-                    prevEl: ".rts-banner-area-two .swiper-button-prev",
                 },
             });
         });
