@@ -1,0 +1,35 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.env
+
+# Build outputs
+dist/
+build/
+out/
+
+# Python (since I see some .py files in the logs)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+venv/
+ENV/
+
+# Local backup/temp files
+*.bak
+*.tmp
+temp/

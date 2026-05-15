@@ -1,0 +1,1107 @@
+/* 
+    BMH Perumbavoor Modernization - Custom CSS
+    Handles Bento Grid Specialities and Expanding Gallery infrastructure
+*/
+
+/* Premium Speciality Bento Grid */
+.premium-speciality-card {
+    background: white;
+    padding: 35px;
+    border-radius: 30px;
+    border: 1px solid #eef2f6;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.premium-speciality-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 56, 168, 0.08);
+    border-color: var(--color-primary);
+}
+
+.premium-speciality-card .icon-box {
+    width: 70px;
+    height: 70px;
+    background: #f0f7ff;
+    color: var(--color-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+    transition: 0.4s;
+}
+
+.premium-speciality-card:hover .icon-box {
+    background: var(--color-primary);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.premium-speciality-card .title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.premium-speciality-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.premium-speciality-card .number {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #f0f0f0;
+    transition: 0.4s;
+}
+
+.premium-speciality-card:hover .number {
+    color: rgba(0, 56, 168, 0.1);
+}
+
+@media (max-width: 991px) {
+    .sticky-top {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 50px;
+    }
+}
+
+/* Expanding Gallery System */
+.gallery-grid-wrapper {
+    position: relative;
+}
+
+.gallery-expand-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 350px;
+    z-index: 1;
+}
+
+.gallery-expand-card .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-expand-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.gallery-expand-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+.gallery-expand-card.expanded .card-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+.gallery-expand-card .card-text h4 {
+    color: white;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.gallery-expand-card .card-text span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery-expand-card .expand-indicator {
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.4s;
+}
+
+.gallery-expand-card:hover .expand-indicator {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-expand-card .close-card {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    z-index: 10;
+}
+
+.gallery-expand-card.expanded .close-card {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-grid-wrapper.active-expansion .gallery-item-col:not(.active-col) {
+    opacity: 0.3;
+    transform: scale(0.9);
+    filter: blur(5px);
+}
+
+/* Nuclear Scroll Lock Utility */
+html.no-scroll,
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+}
+
+.gallery-expand-card.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    border-radius: 0;
+    cursor: default;
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* ============================================================
+   Bento Grid Layout System
+   ============================================================ */
+.bento-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 24px;
+    grid-template-areas:
+        "cardio cardio ortho ortho"
+        "cardio cardio gen ped"
+        "neuro gastro obstet obstet"
+        "neuro neph pulm uro";
+}
+
+.bento-item {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.bento-item:hover {
+    transform: scale(1.02);
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Feature Card Styling */
+.bento-item.feature-card {
+    grid-area: cardio;
+    background: var(--color-primary);
+    color: white;
+}
+
+.bento-item.feature-card .content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    color: white;
+}
+
+.bento-item.feature-card h3 {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.bento-item.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Wide Card Variations */
+.bento-item.wide-card {
+    background: #f0f7ff;
+}
+
+.bento-item.wide-card.pink {
+    background: #fff0f7;
+}
+
+.bento-item.wide-card.red {
+    background: #fff8f8;
+    border: 1px solid #ffecec;
+}
+
+.bento-item.wide-card .content {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bento-item.wide-card .icon {
+    min-width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--color-primary);
+}
+
+.bento-item.wide-card.pink .icon {
+    color: #d63384;
+}
+
+.bento-item.wide-card.red .icon {
+    color: #ff5e5e;
+}
+
+/* Tall Card Styling */
+.bento-item.tall-card {
+    grid-area: neuro;
+    background: var(--color-primary);
+    color: white;
+}
+
+.bento-item.tall-card .content {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-item.tall-card h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Standard/Small Card Styling */
+.bento-item.standard-card {
+    background: white;
+    border: 1px solid #eee;
+}
+
+.bento-item.standard-card .content {
+    padding: 30px;
+}
+
+.bento-item.standard-card i {
+    font-size: 24px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Bento Typography */
+.bento-item h3,
+.bento-item h4,
+.bento-item h5,
+.bento-item h6 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.bento-item p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Bento Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .bento-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "cardio cardio ortho"
+            "cardio cardio gen"
+            "neuro ped gastro"
+            "neuro neph pulm"
+            "obstet obstet uro";
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bento-item.feature-card {
+        height: 400px;
+    }
+
+    .bento-item.tall-card {
+        height: 300px;
+    }
+}
+
+/* ============================================================
+   How to Reach Section Styles
+   ============================================================ */
+.reach-features-list-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.reach-feature-item-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+.reach-feature-item-pill:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(var(--color-primary-rgb), 0.15);
+}
+
+.reach-feature-item-pill i {
+    color: var(--color-primary);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.reach-feature-item-pill span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.reach-feature-item-pill:hover i,
+.reach-feature-item-pill:hover span {
+    color: white;
+}
+
+.map-container-modern {
+    transition: none;
+}
+
+/* ============================================================
+   Environmental Responsibility Section
+   ============================================================ */
+.sustainability-card {
+    padding: 40px;
+    background: white;
+    border-radius: 30px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.sustainability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #27ae60;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.sustainability-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 40px 80px rgba(39, 174, 96, 0.1);
+    border-color: rgba(39, 174, 96, 0.2);
+}
+
+.sustainability-card:hover::before {
+    transform: scaleX(1);
+}
+
+.sustainability-card .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.sustainability-card:hover .icon-wrapper {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.sustainability-card .icon-wrapper.green {
+    background: #e9f7ef;
+    color: #27ae60;
+}
+
+.sustainability-card .icon-wrapper.blue {
+    background: #ebf5fb;
+    color: #3498db;
+}
+
+.sustainability-card .icon-wrapper.teal {
+    background: #e8f8f5;
+    color: #16a085;
+}
+
+.sustainability-card .icon-wrapper.green-light {
+    background: #f1f9f5;
+    color: #2ecc71;
+}
+
+.sustainability-card .icon-wrapper.clinical {
+    background: #f4f6f7;
+    color: var(--color-primary);
+}
+
+.sustainability-card .icon-wrapper.sustainability {
+    background: #f4fdf4;
+    color: #27ae60;
+}
+
+.sustainability-card h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #1a1a1a;
+}
+
+.sustainability-card p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   Modern Enquiry CTA Section
+   ============================================================ */
+.enquiry-premium-card {
+    background: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+.enquiry-bg-decor {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.enquiry-content-box {
+    padding: 60px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #fdfdfd;
+}
+
+.enquiry-content-box .pre-title {
+    color: var(--color-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.enquiry-content-box .title {
+    color: var(--color-heading-1);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.enquiry-content-box .title span {
+    color: var(--color-primary);
+    position: relative;
+}
+
+.enquiry-content-box .disc {
+    color: var(--color-body);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.method-item .icon-box {
+    width: 55px;
+    height: 55px;
+    background: rgba(10, 74, 142, 0.05);
+    border: 1px solid rgba(10, 74, 142, 0.1);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 20px;
+    transition: all 0.4s ease;
+}
+
+.method-item:hover .icon-box {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.method-item .text-box span {
+    display: block;
+    color: var(--color-body);
+    font-size: 12px;
+    margin-bottom: 2px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.method-item .text-box h6 {
+    color: var(--color-heading-1);
+    font-size: 19px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Form Styling */
+.enquiry-form-box {
+    padding: 60px;
+    background: #ffffff;
+    height: 100%;
+}
+
+.input-modern-group {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.input-modern-group input,
+.input-modern-group select,
+.input-modern-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 0 0 40px;
+    color: var(--color-heading-1);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 !important;
+}
+
+.input-modern-group textarea {
+    height: auto;
+    padding-top: 20px;
+}
+
+.input-modern-group select {
+    cursor: pointer;
+    appearance: none;
+    opacity: 0;
+    /* Hide original select for select2 */
+    position: absolute;
+    z-index: -1;
+}
+
+/* ============================================================
+   jQuery UI Datepicker Custom Styling
+   ============================================================ */
+#ui-datepicker-div {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 9999 !important;
+}
+
+.ui-datepicker-header {
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ui-datepicker-title {
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    color: var(--color-heading-1);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    margin: 0 40px;
+    z-index: 1;
+    position: relative;
+    /* Add margin to prevent overlap with buttons */
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.ui-datepicker-prev {
+    left: 0;
+}
+
+.ui-datepicker-next {
+    right: 0;
+}
+
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover {
+    color: var(--color-heading-1);
+}
+
+.ui-datepicker-prev span,
+.ui-datepicker-next span {
+    display: block;
+}
+
+/* Day Names */
+.ui-datepicker-calendar th {
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-body);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Days */
+.ui-datepicker-calendar td {
+    padding: 2px;
+}
+
+.ui-datepicker-calendar td a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-body);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.ui-datepicker-calendar td a:hover {
+    background: rgba(10, 74, 142, 0.05);
+    color: var(--color-primary);
+}
+
+.ui-datepicker-calendar td.ui-datepicker-current-day a {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+/* ============================================================
+   Select2 Theme Alignment
+   ============================================================ */
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    border-radius: 0 !important;
+    height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 40px !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--color-heading-1) !important;
+    padding-left: 0 !important;
+    line-height: 60px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: var(--color-body) !important;
+    opacity: 0.5;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 60px !important;
+    right: 10px !important;
+    width: 30px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: var(--color-body) transparent transparent transparent !important;
+    border-width: 6px 5px 0 5px !important;
+    margin-left: -5px !important;
+}
+
+.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent var(--color-body) transparent !important;
+    border-width: 0 5px 6px 5px !important;
+}
+
+.select2-container--open .select2-dropdown {
+    background: #ffffff !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    z-index: 9999 !important;
+}
+
+.select2-results__option {
+    padding: 12px 20px !important;
+    color: var(--color-body) !important;
+    font-size: 15px !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: rgba(10, 74, 142, 0.05) !important;
+    color: var(--color-primary) !important;
+}
+
+/* Link focus line with Theme Color */
+.select2-container--focus+.input-line {
+    width: 100% !important;
+}
+
+.select2-container--focus~label {
+    color: var(--color-primary) !important;
+    opacity: 1 !important;
+}
+
+.input-modern-group label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    font-size: 17px;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.input-modern-group textarea~label {
+    top: 20px;
+    transform: none;
+}
+
+.input-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: all 0.4s ease;
+}
+
+.input-modern-group input:focus~.input-line,
+.input-modern-group select:focus~.input-line,
+.input-modern-group textarea:focus~.input-line {
+    width: 100%;
+}
+
+.input-modern-group input:focus~label,
+.input-modern-group select:focus~label,
+.input-modern-group textarea:focus~label {
+    color: var(--color-primary);
+}
+
+.input-modern-group input::placeholder,
+.input-modern-group textarea::placeholder {
+    color: #000000 !important;
+    opacity: 0.6 !important;
+}
+
+.premium-submit-btn {
+    width: 100%;
+    height: 70px;
+    background: var(--color-primary);
+    border: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(10, 74, 142, 0.2);
+}
+
+.premium-submit-btn:hover {
+    background: var(--color-heading-1);
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(10, 74, 142, 0.4);
+}
+
+.premium-submit-btn i {
+    transition: transform 0.3s ease;
+}
+
+.premium-submit-btn:hover i {
+    transform: translateX(8px);
+}
+
+.rts-banner-area-two,
+.banner-wrapper-bg {
+    width: 100%;
+    height: calc(100vh - 81px);
+    min-height: 600px;
+}
+
+.banner-wrapper-bg {
+    display: flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center right !important;
+}
+
+.mySwiper-banner-bmh,
+.mySwiper-banner-bmh .swiper-wrapper,
+.mySwiper-banner-bmh .swiper-slide {
+    width: 100% !important;
+}
+
+@media (max-width: 1200px) {
+
+    .enquiry-content-box,
+    .enquiry-form-box {
+        padding: 50px;
+    }
+
+    .enquiry-content-box .title {
+        font-size: 44px;
+    }
+}
+
+/* Modern Footer Styles */
+.footer-modern-dark {
+    background: #0a192f;
+    color: #ffffff;
+    border-top: 5px solid var(--color-primary);
+}
+
+.footer-modern-dark .widget-title {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.footer-modern-dark .widget-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--color-primary);
+}
+
+.footer-disc {
+    color: #a8b2d1;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.footer-links-list li {
+    margin-bottom: 12px;
+}
+
+.footer-links-list li a {
+    color: #a8b2d1;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.footer-links-list li a:hover {
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+.contact-item .icon-box {
+    width: 45px;
+    height: 45px;
+    background: rgba(10, 74, 142, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.contact-item .content p {
+    margin-bottom: 0;
+    color: #a8b2d1;
+    font-size: 15px;
+}
+
+.contact-item .content a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.contact-item .content a.highlight {
+    color: var(--color-primary);
+}
+
+.copyright-modern {
+    background: #081221;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright-modern p {
+    margin-bottom: 0;
+    color: #8892b0;
+    font-size: 14px;
+}
+
+.footer-bottom-links li a {
+    color: #8892b0;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links li a:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 991px) {
+    .footer-modern-dark {
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+}
