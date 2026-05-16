@@ -46,9 +46,7 @@
         }
         .hero-banner h1 { color: #fff; font-size: 64px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
         .hero-banner p { color: #fff; font-size: 22px; margin-bottom: 40px; max-width: 600px; }
-        .hero-buttons { display: flex; gap: 20px; }
-        .btn-white { background: #fff; color: var(--color-primary); font-weight: 600; padding: 15px 30px; border-radius: var(--radius); transition: 0.3s; display: inline-flex; align-items: center;}
-        .btn-white:hover { background: var(--color-success); color: #fff; }
+
 
         /* 2. Overview */
         .overview-img { border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%; }
@@ -170,10 +168,7 @@
                 <div class="col-lg-8">
                     <h1>Advanced Healthcare for Perumbavoor</h1>
                     <p>World-class healthcare backed by expert doctors, advanced technology, and compassionate care.</p>
-                    <div class="hero-buttons">
-                        <a href="#enquiry" class="btn-white">Book Appointment</a>
-                        <a href="tel:1234567890" class="rts-btn btn-primary" style="background: var(--color-danger); border-color: var(--color-danger);">Emergency Contact</a>
-                    </div>
+
                 </div>
             </div>
         </div>

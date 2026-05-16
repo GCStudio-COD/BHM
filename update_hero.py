@@ -14,12 +14,6 @@ new_hero = """    <!-- banner area start -->
                             BMH Perumbavoor brings together experienced specialists, advanced medical technology, and compassionate patient care to deliver trusted healthcare for families across Perumbavoor and nearby regions.
                         </p>
                         
-                        <div class="d-flex flex-wrap gap-3 mb-5">
-                            <a href="#appoinment" class="rts-btn btn-primary" style="background: var(--color-success); border-color: var(--color-success);">Book Appointment</a>
-                            <a href="#emergency" class="rts-btn btn-primary" style="background: var(--color-danger); border-color: var(--color-danger);">Emergency Care</a>
-                            <a href="#enquire" class="rts-btn btn-primary" style="background: transparent; color: #fff; border: 2px solid #fff;">Enquire Now</a>
-                        </div>
-                        
                         <div class="hero-highlights" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
                             <span style="color: #fff; display: flex; align-items: center; gap: 8px; font-weight: 500;"><i class="fa-solid fa-check-circle" style="color: var(--color-success);"></i> 24x7 Emergency Services</span>
                             <span style="color: #fff; display: flex; align-items: center; gap: 8px; font-weight: 500;"><i class="fa-solid fa-check-circle" style="color: var(--color-success);"></i> Multi-speciality Care</span>
