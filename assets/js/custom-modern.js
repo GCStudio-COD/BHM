@@ -112,5 +112,126 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Unified Facilities Swiper Initialization moved to index.html for reliability
+    // Unified Facilities Swiper Initialization moved from index.html
+    $(function() {
+        // Initialize BMH Banner Swiper
+        if ($(".mySwiper-banner-bmh").length) {
+            new Swiper(".mySwiper-banner-bmh", {
+                slidesPerView: 1,
+                loop: true,
+                effect: "slide",
+                speed: 1000,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+            });
+        }
+
+        // Initialize Unified Facilities Swiper
+        if ($(".mySwiper-facilities").length) {
+            new Swiper(".mySwiper-facilities", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: false,
+                loop: true,
+                watchSlidesProgress: true,
+                grabCursor: true,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    draggable: true,
+                    hide: false,
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 20,
+                    },
+                    767: {
+                        slidesPerView: 1.2,
+                        spaceBetween: 15,
+                    }
+                }
+            });
+        }
+
+        // Initialize Bento Mobile Swiper
+        if ($(".mySwiper-bento-mobile").length) {
+            new Swiper(".mySwiper-bento-mobile", {
+                slidesPerView: 2.2,
+                spaceBetween: 15,
+                centeredSlides: false,
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    draggable: true,
+                    hide: false,
+                },
+                breakpoints: {
+                    767: {
+                        slidesPerView: 1.2,
+                    }
+                }
+            });
+        }
+
+        // Initialize Mobile Gallery Swiper
+        if ($(".mySwiper-gallery-mobile").length) {
+            new Swiper(".mySwiper-gallery-mobile", {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+                centeredSlides: false,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    draggable: true,
+                    hide: false,
+                },
+            });
+        }
+
+        // Initialize Nearby Facilities Swiper
+        if ($(".mySwiper-nearby").length) {
+            new Swiper(".mySwiper-nearby", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 20,
+                    },
+                    767: {
+                        slidesPerView: 1.2,
+                        spaceBetween: 15,
+                    }
+                }
+            });
+        }
+    });
 });

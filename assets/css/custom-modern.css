@@ -394,53 +394,59 @@ body.no-scroll {
     color: var(--color-body);
 }
 
-@media (max-width: 1200px) {
+/* Visibility Control for Bento Grid / Swiper */
+@media (max-width: 1023px) {
     .bento-grid-container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas:
-            "cardio cardio gen"
-            "cardio cardio ped"
-            "neuro ortho ortho"
-            "neuro gastro neph"
-            "obstet obstet pulm"
-            "obstet obstet pulm"
-            "uro uro .";
+        display: none !important;
+    }
+    .bento-swiper-mobile {
+        display: block !important;
     }
 }
 
-@media (max-width: 991px) {
-    .bento-grid-container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: none !important;
-        gap: 20px;
+@media (min-width: 1024px) {
+    .bento-swiper-mobile {
+        display: none !important;
     }
+}
 
-    .bento-item {
-        grid-area: auto !important;
-    }
+/* Mobile Swiper Styling */
+.bento-swiper-mobile {
+    padding: 0 0 50px;
+    margin-top: 30px;
+}
 
-    .bento-item.wide-card,
-    .bento-item.feature-card {
-        grid-column: span 2;
-    }
+.bento-swiper-mobile .swiper-slide {
+    height: auto;
+    padding: 10px;
+}
+
+.bento-swiper-mobile .bento-item {
+    height: 100%;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 32px;
+    border: 1px solid #eef2f6;
+    background: #fff;
+    transition: none; /* Pro Max Static UI */
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.bento-swiper-mobile .bento-item .content {
+    padding: 35px;
+}
+
+.bento-swiper-mobile .bento-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.bento-swiper-mobile .swiper-pagination-bullet-active {
+    background: var(--color-primary);
 }
 
 @media (max-width: 767px) {
-    .bento-grid-container {
-        grid-template-columns: 1fr;
-    }
-
-    .bento-item,
-    .bento-item.wide-card,
-    .bento-item.feature-card {
-        grid-column: span 1;
-    }
-
-    .bento-item.feature-card .content,
-    .bento-item.tall-card .content {
-        padding: 30px;
-    }
-
     .bento-item.wide-card .content {
         flex-direction: column;
         align-items: flex-start;
@@ -1991,4 +1997,118 @@ body.no-scroll {
     opacity: 1;
     width: 25px;
     border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Visibility Control for Infrastructure Gallery */
+@media (max-width: 1023px) {
+    .gallery-grid-wrapper {
+        display: none !important;
+    }
+    .gallery-swiper-mobile {
+        display: block !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-swiper-mobile {
+        display: none !important;
+    }
+}
+
+/* Mobile Gallery Swiper Styling */
+.gallery-swiper-mobile {
+    padding: 0 0 50px;
+    margin-top: 30px;
+}
+
+.gallery-mobile-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.gallery-mobile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-mobile-card .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    z-index: 2;
+}
+
+.gallery-mobile-card .content span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.gallery-mobile-card .content h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Responsive Visibility for Controls */
+@media (min-width: 1024px) {
+    .mySwiper-facilities .swiper-button-next,
+    .mySwiper-facilities .swiper-button-prev {
+        display: flex !important;
+    }
+    /* Hide scrollbars on desktop */
+    .mySwiper-facilities .swiper-scrollbar,
+    .mySwiper-bento-mobile .swiper-scrollbar,
+    .mySwiper-gallery-mobile .swiper-scrollbar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    /* Hide navigation on mobile */
+    .mySwiper-facilities .swiper-button-next,
+    .mySwiper-facilities .swiper-button-prev {
+        display: none !important;
+    }
+    
+    /* Premium Global Scrollbar Styling */
+    .mySwiper-facilities .swiper-scrollbar,
+    .mySwiper-bento-mobile .swiper-scrollbar,
+    .mySwiper-gallery-mobile .swiper-scrollbar {
+        display: block !important;
+        position: relative !important;
+        margin: 30px auto 0 !important;
+        width: 80% !important;
+        height: 4px !important;
+        background: rgba(0, 56, 168, 0.1) !important;
+        border-radius: 10px !important;
+    }
+    .mySwiper-facilities .swiper-scrollbar-drag,
+    .mySwiper-bento-mobile .swiper-scrollbar-drag,
+    .mySwiper-gallery-mobile .swiper-scrollbar-drag {
+        background: var(--color-primary) !important;
+        border-radius: 10px !important;
+    }
+}
+
+/* Nearby Swiper Pagination Styling */
+.mySwiper-nearby .swiper-pagination {
+    position: relative !important;
+    margin-top: 30px !important;
+    bottom: 0 !important;
+}
+
+.mySwiper-nearby .swiper-pagination-bullet-active {
+    background: var(--color-primary) !important;
 }
