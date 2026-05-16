@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="assets/css/service-cards.css">
     <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Flaticon UIcons CDN -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 
 <body>
@@ -39,7 +41,8 @@
                                     <li class="main-nav"><a href="about.html">About Us</a></li>
                                     <li class="main-nav"><a href="service.html">Specialities</a></li>
                                     <li class="main-nav"><a href="doctors.html">Doctors</a></li>
-                                    <li class="main-nav"><a href="facilities.html">Facilities</a></li>
+                                    <li class="main-nav"><a href="#facilities">Facilities</a></li>
+
                                     <li class="main-nav"><a href="gallery.html">Gallery</a></li>
                                     <li class="main-nav"><a href="careers.html">Careers</a></li>
                                     <li class="main-nav"><a href="contactus.html">Contact</a></li>
@@ -253,110 +256,227 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-5">
-                <!-- Card 1 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".1s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/emergency.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Emergency & Trauma Care</h4>
-                            <p class="disc">
-                                Round-the-clock emergency services supported by experienced physicians.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
+            <!-- Unified Facilities Swiper Section -->
+            <div class="facilities-swiper-wrapper">
+                <div class="swiper mySwiper-facilities">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1: LINAC -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/01.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">LINAC</h4>
+                                    <p class="disc">Linear Accelerator for advanced radiation therapy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2: BRACHY -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/02.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">BRACHY</h4>
+                                    <p class="disc">High-precision Brachytherapy for localized cancer treatment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: PET CT -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/03.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">PET CT</h4>
+                                    <p class="disc">Advanced PET CT Scan for accurate disease staging.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4: SPECT CT -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/04.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">SPECT CT</h4>
+                                    <p class="disc">Specialized SPECT CT imaging for functional diagnosis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 5: Blood Bank -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/05.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Blood Bank</h4>
+                                    <p class="disc">24x7 Blood Bank with advanced component separation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 6: Lab -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/lab.png');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Lab</h4>
+                                    <p class="disc">Fully automated diagnostic laboratory with rapid results.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 7: CT -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/07.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">CT</h4>
+                                    <p class="disc">High-speed Multi-slice CT Scan for detailed imaging.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 8: MRI -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/08.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">MRI</h4>
+                                    <p class="disc">Advanced high-field MRI for superior soft tissue contrast.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 9: X-RAY -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/09.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">X-RAY</h4>
+                                    <p class="disc">Fully digital X-ray services for quick and clear results.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 10: USG -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/10.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">USG</h4>
+                                    <p class="disc">High-resolution Ultrasound and 4D imaging services.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 11: BMD -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/11.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">BMD</h4>
+                                    <p class="disc">Bone Mineral Density test for osteoporosis screening.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 12: MAMMO -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/12.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">MAMMO</h4>
+                                    <p class="disc">Digital Mammography for early breast cancer detection.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 13: OPG -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/13.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">OPG</h4>
+                                    <p class="disc">Digital Orthopantomogram for comprehensive dental imaging.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 14: ECG -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/14.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">ECG</h4>
+                                    <p class="disc">12-lead Digital ECG for heart rhythm assessment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 15: TMT -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/15.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">TMT</h4>
+                                    <p class="disc">Treadmill Test for cardiac stress evaluation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 16: ECHO -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/16.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">ECHO</h4>
+                                    <p class="disc">Advanced Echocardiography for structural heart assessment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 17: Urodynamic Lab -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/17.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Urodynamic Lab</h4>
+                                    <p class="disc">Specialized testing for urinary system function.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 18: Neuro Lab -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/18.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Neuro Lab</h4>
+                                    <p class="disc">Comprehensive neuro-diagnostic testing (EEG, EMG).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 19: Endoscopy -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/19.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Endoscopy</h4>
+                                    <p class="disc">Advanced endoscopic procedures for internal diagnostics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 20: ERCP -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/20.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">ERCP</h4>
+                                    <p class="disc">Specialized biliary and pancreatic duct procedures.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 21: Cosmetic Laser -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/21.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Cosmetic Laser</h4>
+                                    <p class="disc">Advanced laser treatments for aesthetic procedures.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 22: Audiometry -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/22.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">Audiometry</h4>
+                                    <p class="disc">Comprehensive hearing assessment and testing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 23: IVF Lab -->
+                        <div class="swiper-slide">
+                            <div class="single-service-area" style="background-image: url('assets/images/service/23.webp');">
+                                <div class="content-overlay">
+                                    <h4 class="title">IVF Lab</h4>
+                                    <p class="disc">State-of-the-art IVF laboratory for fertility treatments.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Swiper Navigation -->
+                    <div class="swiper-button-next"><i class="fi fi-rr-angle-small-right"></i></div>
+                    <div class="swiper-button-prev"><i class="fi fi-rr-angle-small-left"></i></div>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/icu.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Intensive Care Unit (ICU)</h4>
-                            <p class="disc">
-                                Advanced critical care facilities with continuous patient monitoring.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/theatre.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Modular Operation Theatres</h4>
-                            <p class="disc">
-                                Modern theatres designed with advanced infection control systems.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/diagnostic.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Advanced Diagnostics</h4>
-                            <p class="disc">
-                                High-end imaging systems enabling accurate and faster assessments.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/lab.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Laboratory Services</h4>
-                            <p class="disc">
-                                Comprehensive laboratory services supporting diagnostic procedures.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".6s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/pharmacy.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Pharmacy Services</h4>
-                            <p class="disc">
-                                24x7 pharmacy support ensuring convenient access to medications.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 7 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/ambulance.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Ambulance Services</h4>
-                            <p class="disc">
-                                Emergency ambulance support with trained response teams.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 8 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s" data-wow-duration=".8s">
-                    <div class="single-service-area" style="background-image: url('assets/images/service/rooms.png');">
-                        <div class="content-overlay">
-                            <h4 class="title">Patient Rooms</h4>
-                            <p class="disc">
-                                Comfort-focused inpatient rooms designed for safety and recovery.
-                            </p>
-                            <a href="#enquire" class="btn-transparent">Learn More <i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
     <div class="service-content-iamge">
         <img src="assets/images/service/13.png" alt="service">
-    </div>
     </div>
     <!-- srvice area end -->
 
@@ -1364,7 +1484,8 @@
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="service.html">Specialities</a></li>
                                 <li><a href="doctors.html">Doctors</a></li>
-                                <li><a href="facilities.html">Facilities</a></li>
+                                <li><a href="#facilities">Facilities</a></li>
+
                             </div>
                             <div class="col-6">
                                 <li><a href="gallery.html">Gallery</a></li>
@@ -1578,6 +1699,25 @@
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
+                },
+            });
+
+            // Initialize Unified Facilities Swiper
+            var facilitiesSwiper = new Swiper(".mySwiper-facilities", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: false,
+                loop: true,
+                watchSlidesProgress: true,
+                grabCursor: true,
+                allowTouchMove: true,
+                autoplay: {
+                    delay: 4500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                 },
             });
         });

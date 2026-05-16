@@ -111,4 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
             el.textContent = email;
         });
     }
+
+    // Unified Facilities Swiper Initialization moved to index.html for reliability
 });

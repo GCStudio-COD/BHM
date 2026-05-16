@@ -44,7 +44,7 @@
 }
 
 .single-service-area:hover {
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    /* box-shadow removed */
 }
 
 .single-service-area:hover::after {

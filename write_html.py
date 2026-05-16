@@ -141,6 +141,7 @@
                                 <li><a href="#hero">Home</a></li>
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#facilities">Facilities</a></li>
+
                                 <li><a href="#specialities">Specialities</a></li>
                                 <li><a href="#gallery">Gallery</a></li>
                             </ul>
@@ -212,27 +213,44 @@
     </section>
 
     <!-- 3. Facilities -->
+
+
+    <!-- 3. Facilities -->
     <section id="facilities" class="rts-section-gap bg-light">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title text-center">
                 <span>Infrastructure</span>
-                <h2>Advanced Facilities & Technology</h2>
+                <h2>World-Class Facilities</h2>
                 <p>Equipped with state-of-the-art medical technology to provide comprehensive patient care.</p>
             </div>
+            <!-- Note: In the actual HTML, this is a Swiper. For simplicity in the script, we list them as cards -->
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-heart-pulse"></i><h4>ICU</h4><p>Advanced critical care</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-baby-carriage"></i><h4>NICU</h4><p>Neonatal intensive care</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-bed-pulse"></i><h4>Modular OT</h4><p>Infection-free surgeries</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-x-ray"></i><h4>Cath Lab</h4><p>Cardiac interventions</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-pills"></i><h4>Pharmacy</h4><p>24/7 medicine access</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-microscope"></i><h4>Laboratory</h4><p>Accurate diagnostics</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-truck-medical"></i><h4>Ambulance</h4><p>Emergency transport</p></div></div>
-                <div class="col-lg-3 col-md-6"><div class="facility-card"><i class="fa-solid fa-droplet"></i><h4>Dialysis Unit</h4><p>Advanced renal care</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>LINAC</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>BRACHY</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>PET CT</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>SPECT CT</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Blood Bank</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Lab</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>CT</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>MRI</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>X-RAY</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>USG</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>BMD</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>MAMMO</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>OPG</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>ECG</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>TMT</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>ECHO</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Urodynamic Lab</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Neuro Lab</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Endoscopy</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>ERCP</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Cosmetic Laser</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>Audiometry</h4></div></div>
+                <div class="col-lg-3 col-md-6"><div class="facility-card"><h4>IVF Lab</h4></div></div>
             </div>
         </div>
     </section>
-
-    <!-- 4. Specialities -->
     <section id="specialities" class="rts-section-gap">
         <div class="container">
             <div class="section-title">
@@ -596,6 +614,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#overview">Overview</a></li>
                     <li><a href="#facilities">Facilities</a></li>
+
                     <li><a href="#specialities">Specialities</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#enquiry">Contact</a></li>
