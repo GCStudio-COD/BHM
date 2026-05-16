@@ -148,8 +148,8 @@
             disableOnInteraction: false,
           },
           navigation: {
-            nextEl: ".testimonial-next",
-            prevEl: ".testimonial-prev",
+            nextEl: ".testimonial-navigation-wrapper .swiper-button-next",
+            prevEl: ".testimonial-navigation-wrapper .swiper-button-prev",
           },
           pagination: {
             el: ".swiper-pagination",

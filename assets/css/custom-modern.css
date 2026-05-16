@@ -229,9 +229,9 @@ body.no-scroll {
     grid-template-areas:
         "cardio cardio ortho ortho"
         "cardio cardio gen ped"
-        "neuro gastro neph uro"
         "neuro obstet obstet pulm"
-        "neuro obstet obstet pulm";
+        "neuro obstet obstet pulm"
+        "gastro neph uro uro";
 }
 
 .bento-item {
@@ -245,9 +245,9 @@ body.no-scroll {
 }
 
 .bento-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.02);
     z-index: 2;
-    box-shadow: 0 20px 40px rgba(10, 74, 142, 0.12);
+    box-shadow: 0 30px 60px rgba(10, 74, 142, 0.15);
 }
 
 .bento-item .content {
@@ -287,9 +287,8 @@ body.no-scroll {
     font-weight: 900;
 }
 
-/* Feature Card Styling (Cardiology) */
+/* Feature Card Styling */
 .bento-item.feature-card {
-    grid-area: cardio;
     background: var(--color-primary);
     border: none;
 }
@@ -335,19 +334,27 @@ body.no-scroll {
     margin-bottom: 0;
 }
 
-/* Tall Card Styling (Neurology) */
-.bento-item.tall-card {
-    grid-area: neuro;
+/* Dark Card Styling */
+.bento-item.dark-card {
     background: #1a202c;
     border: none;
 }
 
-.bento-item.tall-card .content {
+.bento-item.dark-card .content {
     justify-content: space-between;
     padding: 40px;
 }
 
-.bento-item.tall-card .icon-wrapper {
+.bento-item.dark-card h4,
+.bento-item.dark-card h3 {
+    color: white !important;
+}
+
+.bento-item.dark-card p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.bento-item.dark-card .icon-wrapper {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     width: 60px;
@@ -391,12 +398,13 @@ body.no-scroll {
     .bento-grid-container {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
-            "cardio cardio ortho"
             "cardio cardio gen"
+            "cardio cardio ped"
+            "neuro ortho ortho"
             "neuro gastro neph"
-            "neuro obstet obstet"
-            "neuro pulm pulm"
-            "ped uro .";
+            "obstet obstet pulm"
+            "obstet obstet pulm"
+            "uro uro .";
     }
 }
 
@@ -1284,7 +1292,7 @@ body.no-scroll {
 .facility-card-modern .content {
     position: relative;
     z-index: 2;
-    padding: 30px;
+    /* padding: 30px; */
     transition: 0.4s;
     transform: translateY(10px);
 }
@@ -1308,19 +1316,20 @@ body.no-scroll {
 }
 
 .facility-card-modern:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    /* transform: translateY(-10px); */
+    /* box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); */
 }
 
 /* Swiper Nearby Adjustments */
 .mySwiper-nearby {
     overflow: hidden !important;
+    position: relative;
 }
 
 .mySwiper-nearby .swiper-slide {
     height: auto;
     display: flex;
-    padding: 20px 0 60px;
+    /* padding: 20px 0 60px; */
     /* Space for shadow and pagination */
 }
 
@@ -1372,25 +1381,38 @@ body.no-scroll {
     background: #ffffff;
     border: 1px solid #eef2f6;
     border-radius: 50%;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary);
+    color: var(--color-primary) !important;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    position: relative !important;
+    top: auto !important;
+    margin-top: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: 10;
 }
 
 .swiper-btn:hover {
     background: var(--color-primary);
-    color: #ffffff;
+    color: #ffffff !important;
     border-color: var(--color-primary);
     box-shadow: 0 15px 30px rgba(0, 56, 168, 0.2);
 }
 
+.swiper-btn::after {
+    display: none !important;
+}
+
 .swiper-btn i {
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+    display: block;
 }
 
 /* Testimonial Active Slide Animation */
@@ -1484,7 +1506,8 @@ body.no-scroll {
    PRO MAX FOOTER DESIGN
    ============================================================ */
 .rts-footer-area.footer-one {
-    background: #0a0e1a !important; /* Deep Navy/Black */
+    background: #0a0e1a !important;
+    /* Deep Navy/Black */
     padding-top: 100px !important;
     padding-bottom: 60px !important;
     position: relative;
@@ -1634,7 +1657,8 @@ body.no-scroll {
 
 /* Copyright Modern Bar */
 .copyright-modern {
-    background: #060911 !important; /* Slightly darker than footer */
+    background: #060911 !important;
+    /* Slightly darker than footer */
     padding: 25px 0 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.5) !important;
@@ -1679,7 +1703,8 @@ body.no-scroll {
    NEARBY FACILITIES SECTION & PAGINATION FIX
    ============================================================ */
 .nearby-facilities-area {
-    background: #f8fafc !important; /* Very light slate */
+    background: #f8fafc !important;
+    /* Very light slate */
     position: relative;
     z-index: 1;
     padding-top: 150px !important;
@@ -1687,15 +1712,14 @@ body.no-scroll {
 }
 
 .mySwiper-nearby {
-    padding-bottom: 80px !important; /* Proper clearing for pagination */
+    padding-bottom: 80px !important;
+    /* Proper clearing for pagination */
     overflow: hidden !important;
 }
 
 .facility-card-modern {
     height: 350px;
     border-radius: 24px;
-    background-size: cover;
-    background-position: center;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -1705,6 +1729,19 @@ body.no-scroll {
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
+}
+
+.facility-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+}
+
+.facility-card-modern:hover .facility-bg-image {
+    transform: scale(1.15);
 }
 
 .facility-card-modern::before {
@@ -1719,7 +1756,7 @@ body.no-scroll {
     position: relative;
     z-index: 2;
     color: #ffffff;
-    transform: translateY(20px);
+    transform: translateY(50px);
     transition: transform 0.5s ease;
 }
 
@@ -1737,8 +1774,7 @@ body.no-scroll {
 }
 
 .facility-card-modern:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
 }
 
 .facility-card-modern:hover .content {
@@ -1768,4 +1804,21 @@ body.no-scroll {
     width: 30px;
     border-radius: 5px;
     opacity: 1;
+}
+
+/* Pre-title Modern Styling */
+.pre-title-modern {
+    color: var(--color-primary) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    display: block !important;
+    margin-bottom: 15px !important;
+    font-size: 14px !important;
+}
+
+/* Hide Swiper Default Navigation Icons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none !important;
 }
