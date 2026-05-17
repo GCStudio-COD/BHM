@@ -238,16 +238,9 @@ body.no-scroll {
     position: relative;
     border-radius: 32px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    cursor: default;
     background: white;
     border: 1px solid #c7d9f3;
-}
-
-.bento-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    z-index: 2;
-    box-shadow: 0 30px 60px rgba(10, 74, 142, 0.15);
 }
 
 .bento-item .content {
@@ -272,11 +265,6 @@ body.no-scroll {
     color: var(--color-primary);
     font-size: 24px;
     transition: all 0.3s ease;
-}
-
-.bento-item:hover .icon-wrapper {
-    background: var(--color-primary);
-    color: white;
 }
 
 .bento-item .content i,
@@ -2111,4 +2099,9 @@ body.no-scroll {
 
 .mySwiper-nearby .swiper-pagination-bullet-active {
     background: var(--color-primary) !important;
+}
+
+/* Service Area Custom Padding */
+.service-area {
+    padding-top: 100px !important;
 }
